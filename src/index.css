@@ -9,20 +9,10 @@ html {
 
 body {
   font-family: 'Open Sans', sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-image: 0;
+  display: grid;
+  justify-items: center;
+  background-image: url('./Assets/background.png');
   background-size: cover;
   background-position: center;
   height: 100vh;
-  margin: 0;
-}
-
-.app {
-  width: 1000px;
-  height: 700px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
