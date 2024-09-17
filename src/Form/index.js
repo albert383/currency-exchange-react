@@ -9,7 +9,7 @@ const Form = ({ setResult, result }) => {
     const [amount, setAmount] = useState(100);
     const [currency, setCurrency] = useState("EUR");
 
-    const handleSubmit = (event) => {
+    const onSubmit = (event) => {
         event.preventDefault();
         const selectedCurrency = currencies.find((cur) => cur.code === currency);
         const calculatedValue = (amount * selectedCurrency.rate).toFixed(2);
@@ -17,7 +17,7 @@ const Form = ({ setResult, result }) => {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="form">
+        <form onSubmit={onSubmit} className="form">
             <fieldset className="form__fieldset">
                 <legend className="form__legend">KANTOR</legend>
                 <p>
