@@ -4,7 +4,7 @@ import Container from "./Container";
 import "./index.css";
 
 function App() {
-  const [result, setResult] = useState(""); // Stan dla wyniku
+  const [result, setResult] = useState("");
 
   return (
     <Container>
