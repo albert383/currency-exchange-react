@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./style.css";
-import currencies from "../currencies";
-import Result from "../Result";
-import Paragraph from "../Paragraph";
+import currencies from "./currencies";
+import Result from "./Result";
+import Paragraph from "./Paragraph";
 
 const Form = () => {
     const [amount, setAmount] = useState(100);
