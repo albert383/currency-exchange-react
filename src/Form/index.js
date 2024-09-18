@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Button from "../Button";
 import "./style.css";
 import currencies from "../Data";
 import Result from "../Result";
@@ -50,7 +49,9 @@ const Form = ({ setResult, result }) => {
                         </li>
                     ))}
                 </ul>
-                <Button />
+                <button className="button" type="submit">
+                    Oblicz
+                </button>
                 <Result result={result} />
                 <Paragraph title="* Pola oznaczone gwiazdką są wymagane" />
             </fieldset>
