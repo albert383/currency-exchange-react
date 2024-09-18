@@ -4,9 +4,10 @@ import currencies from "../currencies";
 import Result from "../Result";
 import Paragraph from "../Paragraph";
 
-const Form = ({ setResult, result }) => {
+const Form = () => {
     const [amount, setAmount] = useState(100);
     const [currency, setCurrency] = useState("EUR");
+    const [result, setResult] = useState("")
 
     const onSubmit = (event) => {
         event.preventDefault();
