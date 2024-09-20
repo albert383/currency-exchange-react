@@ -3,6 +3,7 @@ import "./style.css";
 import currencies from "./currencies";
 import Result from "./Result";
 import Paragraph from "./Paragraph";
+import Clock from "./Clock/clock";
 
 const Form = () => {
     const [amount, setAmount] = useState(100);
@@ -18,6 +19,7 @@ const Form = () => {
 
     return (
         <form onSubmit={onSubmit} className="form">
+            <Clock />
             <fieldset className="form__fieldset">
                 <legend className="form__legend">KANTOR</legend>
                 <p>
