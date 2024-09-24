@@ -25,6 +25,8 @@ This project is a simple Currency Exchange application built using **React**, **
   - The exchange rate is updated in real-time when the user selects a currency or changes the input amount.
    **Real-time Clock**:
   - A clock is displayed at the top of the application, showing the current date and time in the format: "Dzisiaj jest sobota, 25 lipca, 17:02:23". The clock updates every second.
+    **Styled-components**:
+  -  All styles have been migrated to styled-components, making it easier to manage styles and ensuring modularity.
 ## Demo
 
 ![example of usage](https://zapodaj.net/images/46ec5d369c530.gif)
