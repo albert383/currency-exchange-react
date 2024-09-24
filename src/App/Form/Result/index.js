@@ -1,9 +1,10 @@
-import "./style.css";
+import React from "react";
+import { Paragraph } from "./styled";
 
 const Result = ({ result }) => (
-    <p className="result_paragraph">
+    <Paragraph>
         Otrzymasz: <strong>{result || "N/A"}</strong>
-    </p>
+    </Paragraph>
 );
 
 export default Result;
