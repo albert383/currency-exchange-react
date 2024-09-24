@@ -1,7 +1,8 @@
-import "./style.css";
+import React from "react";
+import { SmallParagraph } from "./styled";
 
 const Paragraph = ({ title }) => {
-    return <p className="paragraph">{title}</p>;
+    return <SmallParagraph>{title}</SmallParagraph>;
 };
 
 export default Paragraph;
