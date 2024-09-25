@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import currencies from "./currencies";
 import Result from "./Result";
-import Paragraph from "./Paragraph";
+import { SmallParagraph } from "./Paragraph/styled";
 import Clock from "./Clock/clock";
 import { FormWrapper, Fieldset, Legend, Label, InputField, ListItem, Button } from "./styled";
 
@@ -53,7 +53,7 @@ const Form = () => {
                 </ul>
                 <Button type="submit">Oblicz</Button>
                 <Result result={result} />
-                <Paragraph title="* Pola oznaczone gwiazdką są wymagane" />
+                <SmallParagraph>* Pola oznaczone gwiazdką są wymagane</SmallParagraph>
             </Fieldset>
         </FormWrapper>
     );
