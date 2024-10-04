@@ -21,7 +21,7 @@ const useCurrencyRates = (initialCurrency = "EUR", initialAmount = 100) => {
                     "https://api.currencyapi.com/v3/latest?apikey=cur_live_qD7fWZYePxQmvJEwRFHzPBXvedeCD2QQLS7KrnAT&currencies=EUR%2CUSD%2CCAD%2CGBP%2CCHF&base_currency=PLN"
                 );
                 if (!response.ok) {
-                    throw new Error(`Błąd HTTP: ${response.status}`);
+                    throw new Error(`Błąd HTTP: ${response.statusText}`);
                 }
 
                 const data = await response.json();
