@@ -50,6 +50,7 @@ export const ListItem = styled.li`
 `;
 
 export const Button = styled.button`
+    display: flex;
     width: 100%;
     border: solid transparent;
     background-color: teal;
@@ -57,6 +58,8 @@ export const Button = styled.button`
     border-radius: 5px;
     color: aliceblue;
     padding: 10px;
+    justify-content: center;
+    align-items: center;
 
     &:hover {
         background-color: rgba(0, 128, 128, 0.829);
