@@ -6,10 +6,7 @@ const useCurrencyRates = (initialCurrency = "EUR", initialAmount = 100) => {
     const [result, setResult] = useState("");
 
     const [ratesData, setRatesData] = useState({
-        rates: {},
-        date: null,
-        loading: true,
-        error: null,
+        state: "loading",
     });
 
     const [fakeLoading, setFakeLoading] = useState(true);
