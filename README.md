@@ -27,9 +27,34 @@ This project is a simple Currency Exchange application built using **React**, **
   - A clock is displayed at the top of the application, showing the current date and time in the format: "Dzisiaj jest sobota, 25 lipca, 17:02:23". The clock updates every second.
     **Styled-components**:
   -  All styles have been migrated to styled-components, making it easier to manage styles and ensuring modularity.
+
+## Recent Updates
+
+### Currency Selection with `Select` Dropdown
+- Replaced radio buttons with a dropdown (`<select>`) for selecting currencies, providing a cleaner user interface.
+- The available currencies (EUR, USD, CAD, GBP, CHF) are fetched dynamically from the **CurrencyAPI**.
+
+### API Integration
+- Integrated with the **CurrencyAPI** to fetch real-time exchange rates.
+- The base currency is set to PLN, and exchange rates are fetched for multiple currencies.
+
+### State Management
+- A custom hook `useCurrencyRates` is used to manage application state, including:
+  - The selected currency.
+  - The entered amount in PLN.
+  - The fetched exchange rates.
+  - The last update date of the exchange rates from the API.
+  - Error and loading states to handle API responses effectively.
+
+### Date Display from API
+- The application displays the last updated date of the exchange rates, retrieved from the API, below the conversion result.
+
+### Loading Indicator
+- A loading indicator is displayed with a delay of 3 seconds, showing a message while the exchange rates are being fetched from the API.
+
 ## Demo
 
-![example of usage](https://zapodaj.net/images/46ec5d369c530.gif)
+![example of usage](https://i.ibb.co/zb51Ppj/to-do-list-usage-local-storage.gif)
 
 You can see the app live at: [albert383.github.io/currency-exchange-react](https://albert383.github.io/currency-exchange-react/)
 
