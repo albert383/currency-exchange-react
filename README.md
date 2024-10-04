@@ -54,7 +54,7 @@ This project is a simple Currency Exchange application built using **React**, **
 
 ## Demo
 
-![example of usage](https://i.postimg.cc/wThD61sk/to-do-list-usage-local-storage.gif)(https://postimg.cc/hftXsPsJ)
+![example of usage](https://i.postimg.cc/wThD61sk/to-do-list-usage-local-storage.gif)
 
 You can see the app live at: [albert383.github.io/currency-exchange-react](https://albert383.github.io/currency-exchange-react/)
 
