@@ -4,9 +4,10 @@ const API_URL = "https://api.currencyapi.com/v3/latest?apikey=cur_live_qD7fWZYeP
 
 export const fetchCurrencyRates = async () => {
     try {
-        const { data } = await axios.get(API_URL);
-        return [data.data, data.meta.last_updated_at];
+        const { data: { data: rates, meta: { last_updated_at: date } } } = await axios.get(API_URL);
+        return { rates, date, error: null };
     } catch (error) {
-        return [null, null, error.message || "Błąd pobierania danych"];
+        console.error("Błąd pobierania kursów walut:", error);
+        return { rates: null, date: null, error: error.message || "Błąd pobierania danych" };
     }
 };
