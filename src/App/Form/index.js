@@ -46,7 +46,7 @@ const Form = () => {
                                     step="any"
                                     value={amount}
                                     onChange={(e) => setAmount(e.target.value)}
-                                    id="amount" 
+                                    id="amount"
                                     name="amount"
                                 />
                             </Label>
