@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { fetchCurrencyRates } from "./fetchCurrencyRates";
-import { calculateResult } from "../Result";
+import { calculateResult } from "./Result";
 
 const useCurrencyRates = (initialCurrency = "EUR", initialAmount = 100) => {
     const [amount, setAmount] = useState(initialAmount);
