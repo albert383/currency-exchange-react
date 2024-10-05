@@ -1,44 +1,26 @@
 import { useState, useEffect } from "react";
+import { fetchCurrencyRates } from "./fetchCurrencyRates";
+import { calculateResult } from "../Result";
 
 const useCurrencyRates = (initialCurrency = "EUR", initialAmount = 100) => {
     const [amount, setAmount] = useState(initialAmount);
     const [currency, setCurrency] = useState(initialCurrency);
     const [result, setResult] = useState("");
-
-    const [ratesData, setRatesData] = useState({
-        state: "loading",
-    });
-
+    const [ratesData, setRatesData] = useState({ state: "loading" });
     const [fakeLoading, setFakeLoading] = useState(true);
 
     useEffect(() => {
-        const fetchRates = async () => {
-            try {
-                const response = await fetch(
-                    "https://api.currencyapi.com/v3/latest?apikey=cur_live_qD7fWZYePxQmvJEwRFHzPBXvedeCD2QQLS7KrnAT&currencies=EUR%2CUSD%2CCAD%2CGBP%2CCHF&base_currency=PLN"
-                );
-                if (!response.ok) {
-                    throw new Error(`Błąd HTTP: ${response.statusText}`);
-                }
-
-                const data = await response.json();
-
-                setRatesData({
-                    rates: data.data,
-                    date: data.meta.last_updated_at,
-                    loading: false,
-                    error: null,
-                });
-            } catch (error) {
-                setRatesData((prevData) => ({
-                    ...prevData,
-                    loading: false,
-                    error: error.message,
-                }));
-            }
+        const getRates = async () => {
+            const data = await fetchCurrencyRates();
+            setRatesData({
+                rates: data.rates,
+                date: data.date,
+                loading: false,
+                error: data.error,
+            });
         };
 
-        fetchRates();
+        getRates();
 
         const timer = setTimeout(() => {
             setFakeLoading(false);
@@ -47,14 +29,9 @@ const useCurrencyRates = (initialCurrency = "EUR", initialAmount = 100) => {
         return () => clearTimeout(timer);
     }, []);
 
-    const calculateResult = () => {
-        const selectedCurrency = ratesData.rates[currency];
-        if (!selectedCurrency) {
-            setResult("Waluta nie jest dostępna.");
-            return;
-        }
-        const calculatedValue = (amount * selectedCurrency.value).toFixed(2);
-        setResult(`Otrzymasz ${calculatedValue} ${currency}`);
+    const onCalculateResult = () => {
+        const selectedCurrency = ratesData.rates?.[currency];
+        setResult(calculateResult(amount, selectedCurrency));
     };
 
     return {
@@ -63,7 +40,7 @@ const useCurrencyRates = (initialCurrency = "EUR", initialAmount = 100) => {
         currency,
         setCurrency,
         result,
-        calculateResult,
+        calculateResult: onCalculateResult,
         ratesData,
         fakeLoading,
     };
